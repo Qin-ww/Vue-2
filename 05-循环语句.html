@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>v-for循环语句</title>
+    <!-- 
+        引入需要的外部文件
+     -->
+    <script src="vue.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        创建一个操作元素
+     -->
+    <div id="app">
+        <ul>
+            <li v-for="item,index in messages" v-bind:key="index">
+                {{index}}:{{ item.text }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            // 创建一个数组
+            messages:[
+                { text: "吃啥 啥不剩" },
+                { text: "干啥 啥不行" },
+                { text: "啥也不是！" },
+            ]
+        }
+    })
+</script>
+
+</html>
